@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="TRS80_MC10">
+		<CBX_INST_ENTRY INSTANCE_NAME="|MC10|MC6803_gen2:CPU0|MEM_128_8:iMEM|altsyncram:REGS_rtl_0" CBX_FILE_NAME="altsyncram_4tg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MC10|MC6847_gen3:VDG|CHR_ROM:CHR_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_gba1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MC10|PLL0:PLL_inst|altpll:altpll_component" CBX_FILE_NAME="PLL0_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MC10|ROM:ROM_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_fq91.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

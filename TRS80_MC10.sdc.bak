@@ -1,0 +1,5 @@
+create_clock -period 20ns [get_ports Clk]
+create_clock -name {MULTIPLEXED_HEX_DRIVER:multiHEX|frame_clk:frame_clk_inst|frame_clk} -period 1000.000 [get_nets {multiHEX|frame_clk_inst|frame_clk}]
+derive_pll_clocks
+derive_clock_uncertainty
+set_false_path -from * -to [get_ports {LED* beep audio SEG_SEL* HEX_OUT*}]

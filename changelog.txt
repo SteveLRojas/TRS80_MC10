@@ -1,0 +1,33 @@
+rev 109
+New Quartus project created and old one deleted.
+All leftover files from ECE385 removed.
+Testbench set up to simulate CLOADM command.
+
+Revision 110
+New Quartus (version 10.0) project created and old one archived.
+Optimized MULTIPLEXED_HEX_DRIVER.
+Created MC6847_gen3 to replace MC6847_gen2.
+	The MC6847_gen3 module provides the same functionality as the gen2 module with less resource usage.
+Added synchronizers on PS/2 keyboard lines.
+Main 50MHz clock is now derived from a PLL.
+10MHz clock eliminated.
+Created SDC file with constraints.
+Set IO standard and current strength assignments.
+
+Revision 111
+Fixed bug in CPU core (Stack pointer should not be affected by reset).
+Removed reset logic from MEM_128_8.
+MEM_128_8 is now synchronous.
+	After removing the reset logic and making the memory synchronous MEM_128_8 infers block ram.
+Added ramstyle = "logic" synthesis attribute to MEM_128_8 (There are no free M9K blocks).
+Replaced the MCM character ROM with one that more closely resembles the MC6847 ROM.
+	The new ROM is smaller and uses one fewer M9K block.
+Removed the ramstyle = "logic" attribute from MEM_128_8 (Using the last available M9K block).
+
+Revision 112
+Optimized MULTIPLEXED_HEX_DRIVER.
+Optimized memory subsystem.
+Simplified bus_arbiter_gen2.
+Created SDRAM_controller and SDRAM assignments.
+	A separate project will be created to debug the SDRAM controller.
+Fixed SDRAM controller and replaced previous memory system.

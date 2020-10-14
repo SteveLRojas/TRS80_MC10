@@ -1,0 +1,221 @@
+module SDRAM_controller(
+		input wire clk,
+		input wire reset,
+		input wire HSYNC,
+		
+		input wire[23:0] A_address,
+		input wire A_write,
+		output wire[15:0] A_data_out,
+		input wire[15:0] A_data_in,
+		
+		input wire[23:0] B_address,
+		output wire[15:0] B_data_out,
+		
+		output wire SDRAM_CKE,
+		output wire SDRAM_CSn,
+		output wire SDRAM_WREn,
+		output wire SDRAM_CASn,
+		output wire SDRAM_RASn,
+		output reg[12:0] SDRAM_A,
+		output reg[1:0] SDRAM_BA,
+		output reg[1:0] SDRAM_DQM,
+		inout wire[15:0] SDRAM_DQ);
+		
+assign SDRAM_CKE = 1'b1;
+assign SDRAM_CSn = 1'b0;
+
+localparam [2:0] SDRAM_CMD_LOADMODE  = 3'b000;
+localparam [2:0] SDRAM_CMD_REFRESH   = 3'b001;
+localparam [2:0] SDRAM_CMD_PRECHARGE = 3'b010;
+localparam [2:0] SDRAM_CMD_ACTIVE    = 3'b011;
+localparam [2:0] SDRAM_CMD_WRITE     = 3'b100;
+localparam [2:0] SDRAM_CMD_READ      = 3'b101;
+localparam [2:0] SDRAM_CMD_NOP       = 3'b111;
+
+reg [2:0] SDRAM_CMD;
+reg gate_out;
+reg gate_in_A, gate_in_B;
+
+assign {SDRAM_RASn, SDRAM_CASn, SDRAM_WREn} = SDRAM_CMD;
+assign SDRAM_DQ = gate_out ? A_data_in : 16'hZZZZ;
+
+localparam
+			S_mode = 4'h0,
+			S_activate_A = 4'h1,
+			S_activate_A_NOP = 4'h2,
+			S_read_A = 4'h3,
+			S_write_A = 4'h4,
+			S_activate_B = 4'h5,
+			S_activate_B_NOP = 4'h6,
+			S_read_B = 4'h7,
+			S_precharge_all = 4'h8,
+			S_gate_B = 4'h9,
+			S_refresh_1 = 4'hA,
+			S_refresh_2 = 4'hB;
+			
+reg[3:0] state, next_state;
+initial begin
+	state = S_mode;
+end
+
+
+
+endmodule
+
+module SDRAM_CTRL(
+		input wire clk,
+		input wire reset,
+		output wire busy,
+
+		input wire RdRequest,
+		output reg RdGrant,
+		input wire[23:0] RdAddress,
+		output reg[15:0] RdData,
+		
+		input wire WrRequest,
+		output reg WrGrant,
+		input wire[23:0] WrAddress,
+		input wire[15:0] WrData,
+		
+		output wire SDRAM_CKE,
+		output wire SDRAM_CSn,
+		output wire SDRAM_WREn,
+		output wire SDRAM_CASn,
+		output wire SDRAM_RASn,
+		output reg[12:0] SDRAM_A,
+		output reg[1:0] SDRAM_BA,
+		output reg[1:0] SDRAM_DQM,
+		inout wire[15:0] SDRAM_DQ
+    );
+assign SDRAM_CKE = 1'b1;
+assign SDRAM_CSn = 1'b0;
+assign busy = (state != S_idle);
+	 
+localparam [2:0] SDRAM_CMD_LOADMODE  = 3'b000;
+localparam [2:0] SDRAM_CMD_REFRESH   = 3'b001;
+localparam [2:0] SDRAM_CMD_PRECHARGE = 3'b010;
+localparam [2:0] SDRAM_CMD_ACTIVE    = 3'b011;
+localparam [2:0] SDRAM_CMD_WRITE     = 3'b100;
+localparam [2:0] SDRAM_CMD_READ      = 3'b101;
+localparam [2:0] SDRAM_CMD_NOP       = 3'b111;
+
+reg [2:0] SDRAM_CMD;
+reg gate_out;
+reg gate_in;
+reg [8:0] cycleCount, next_cycleCount;
+wire refresh;
+wire [23:0] Addr;
+assign Addr = RdRequest ? RdAddress : WrAddress;
+assign {SDRAM_RASn, SDRAM_CASn, SDRAM_WREn} = SDRAM_CMD;
+assign SDRAM_DQ = gate_out ? WrData : 16'hZZZZ;
+assign refresh = (cycleCount >= 9'd390);
+
+localparam S_idle = 4'h0, S_read = 4'h1, S_readNop = 4'h2, S_write = 4'h3, S_NOP = 4'h4, S_precharge = 4'h5, S_refresh = 4'h6, S_mode = 4'h7;
+reg[3:0] state, next_state;
+initial begin
+	state = S_mode;
+end
+
+always @(posedge clk)
+begin
+	if(reset)
+		state <= S_mode;
+	else
+	begin
+		state <= next_state;
+	end
+	if(gate_in)
+		RdData <= SDRAM_DQ;
+	RdGrant <= gate_in;
+	WrGrant <= gate_out;
+	cycleCount <= next_cycleCount;
+end
+
+always @(*)
+begin
+SDRAM_CMD = SDRAM_CMD_NOP;
+SDRAM_A = 13'b0000000100000;
+gate_in = 1'b0;
+gate_out = 1'b0;
+next_cycleCount = cycleCount + 9'h1;
+SDRAM_DQM = 2'b00;
+SDRAM_BA = Addr[23:22];
+next_state = state;
+	case(state)
+	S_mode:
+	begin
+		SDRAM_CMD = SDRAM_CMD_LOADMODE;
+		SDRAM_A = 13'b0000000100000;
+		next_state = S_precharge;
+	end
+	S_idle:
+	begin
+		if(refresh)
+		begin
+			SDRAM_CMD =  SDRAM_CMD_NOP;
+			next_state = S_refresh;
+		end
+		else
+		begin
+			if(RdRequest|WrRequest)
+			begin
+				SDRAM_CMD = SDRAM_CMD_ACTIVE;	//send activate command
+				SDRAM_BA = Addr[23:22];	//set bank
+				SDRAM_A[12:0] = Addr[21:9];	//set row
+				SDRAM_DQM = 2'b11;
+			end
+			if(RdRequest)
+				next_state = S_read;
+			else if(WrRequest)
+				next_state = S_write;
+			else
+				next_state = state;
+		end
+	end
+	S_read:
+	begin
+		SDRAM_CMD = SDRAM_CMD_READ;
+		SDRAM_BA = Addr[23:22];
+		SDRAM_A[8:0] = Addr[8:0];	//set column
+		SDRAM_A[10] = 1'b0;	//no auto precharge
+		SDRAM_DQM = 2'b00;
+		next_state = S_readNop;
+	end
+	S_readNop:
+	begin
+		SDRAM_CMD = SDRAM_CMD_NOP;
+		gate_in = 1'b1;
+		next_state = S_NOP;
+	end
+	S_write:
+	begin
+		SDRAM_CMD = SDRAM_CMD_WRITE;
+		SDRAM_BA = Addr[23:22];
+		SDRAM_A[8:0] = Addr[8:0];
+		SDRAM_A[10] = 1'b0;
+		SDRAM_DQM = 2'b00;
+		next_state = S_NOP;
+		gate_out = 1'b1;
+	end
+	S_NOP:
+	begin
+		SDRAM_CMD = SDRAM_CMD_NOP;
+		next_state = S_precharge;
+	end
+	S_precharge:
+	begin
+		SDRAM_CMD = SDRAM_CMD_PRECHARGE;
+		SDRAM_A[10] = 1'b1;	//precharge all
+		next_state = S_idle;
+	end
+	S_refresh:
+	begin
+		SDRAM_CMD = SDRAM_CMD_REFRESH;
+		next_cycleCount = 0;
+		next_state = S_idle;
+	end
+	default: ;
+	endcase
+end
+
+endmodule

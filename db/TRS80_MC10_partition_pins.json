@@ -1,0 +1,117 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "TAPE_OUT",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_SEL[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_SEL[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_SEL[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SEG_SEL[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_OUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_OUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_OUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_OUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_OUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_OUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_OUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "R",
+					"strict" : false
+				},
+				{
+					"name" : "G",
+					"strict" : false
+				},
+				{
+					"name" : "B",
+					"strict" : false
+				},
+				{
+					"name" : "HSYNC",
+					"strict" : false
+				},
+				{
+					"name" : "VSYNC",
+					"strict" : false
+				},
+				{
+					"name" : "audio",
+					"strict" : false
+				},
+				{
+					"name" : "TAPE_IN",
+					"strict" : false
+				},
+				{
+					"name" : "Clk",
+					"strict" : false
+				},
+				{
+					"name" : "RST",
+					"strict" : false
+				},
+				{
+					"name" : "button[2]",
+					"strict" : false
+				},
+				{
+					"name" : "button[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_clk",
+					"strict" : false
+				},
+				{
+					"name" : "button[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_data",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
