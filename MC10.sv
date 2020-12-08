@@ -56,48 +56,6 @@ assign TAPE_OUT = PORT_B_OUT[0];
 PLL0 PLL_inst(.inclk0(Clk), .c0(cpu_clk), .c1(vdg_clk_25), .c2(clk_50), .c3(SDRAM_CLK));
 
 //************MEMORY SUBSYSTEM***************************************************************************************************************************
-//logic[15:0] system_address;
-//logic[7:0] arbiter_ram_out, memory_data_out, ram_q, rom_q;
-//logic RAM_W, ROM_E, RAM_E, VDG_E, KBD_E, RW_out;
-//assign RAM_W = RW_out&((system_address[14]&(~system_address[15]))|(system_address[15]&(~system_address[14])&(~system_address[13])&(~system_address[12])));
-//assign ROM_E = E_CLK & CPU_address[14] & CPU_address[15];
-//assign RAM_E = E_CLK & ((CPU_address[14]&(~CPU_address[15]))|(CPU_address[15]&(~CPU_address[14])&(~CPU_address[13])&(~CPU_address[12])));
-//assign VDG_E = E_CLK & CPU_address[15]&(~CPU_address[14])&(CPU_address[13]|CPU_address[12])&(~rw);
-//assign KBD_E = E_CLK & CPU_address[15]&(~CPU_address[14])&(CPU_address[13]|CPU_address[12])&rw;
-//
-//always_ff @(posedge clk_50)
-//begin
-//	if(VDG_E)
-//		VDG_control <= DATA_OUT[7:2];
-//end
-//
-//always_comb
-//begin
-//	if(RAM_E)
-//		DATA_IN = arbiter_ram_out;
-//	else if(ROM_E)
-//		DATA_IN = rom_q;
-//	else if(KBD_E)
-//		DATA_IN = {2'b11, key_out[5:0]};
-//	else
-//		DATA_IN = system_address[7:0];
-//end
-//
-//RAM RAM_inst(.address({~system_address[14], system_address[13:0]}), .clock(clk_50), .data(memory_data_out), .wren(RAM_W), .q(ram_q));
-//ROM ROM_inst(.address(CPU_address[12:0]), .clock(clk_50), .q(rom_q));
-//bus_arbiter_gen2 arbiter_inst(
-//	.clk(clk_50),
-//	.RW_in(~rw & E_CLK),
-//	.VDG_address({1'b0, 1'b1, DA}),
-//	.CPU_address,
-//	.RAM_data_in(ram_q),
-//	.CPU_data_in(DATA_OUT),
-//	.system_address,
-//	.RAM_data_out(arbiter_ram_out),
-//	.VDG_data_out(DD), 
-//	.memory_data_out, 
-//	.RW_out);
-
 logic[15:0] A_data_out, B_data_out;
 logic[7:0] ROM_data;
 logic[15:0] CPU_address_s;
@@ -149,7 +107,6 @@ SDRAM_controller SDRAM_inst(
 			.SDRAM_DQ);
 assign DD = B_data_out[7:0];
 //*******************************************************************************************************************************************************
-
 MULTIPLEXED_HEX_DRIVER multiHEX(.Clk(clk_50), .SEG3(debug[7:4]), .SEG2(debug[3:0]), .SEG1(key_code[7:4]), .SEG0(key_code[3:0]), .SEG_SEL, .HEX_OUT);
 PS2_keyboard keyboard(.clk(clk_50), .reset, .ps2_clk(ps2_clk_s), .ps2_data(ps2_data_s), .key_code, .debug);
 KEY_MATRIX MATRIX(.row_select(PORT_A_OUT), .key_code, .key_out);
@@ -171,7 +128,5 @@ MC6803_gen2 CPU0(
 		.rw,
 		.irq(1'b0));
 
-//MC6847_gen2 VDG(.DD, .DA, .clk_25(vdg_clk_25), .clk_10(vdg_clk_10), .reset, .R, .G, .B, .HSYNC, .VSYNC, .AG(VDG_control[3]), .SA(DD[7]), .INV(DD[6]));
 MC6847_gen3 VDG(.DD, .DA, .clk_25(vdg_clk_25), .reset, .R, .G, .B, .HSYNC, .VSYNC, .AG(VDG_control[3]), .SA(DD[7]), .INV(DD[6]));
-
 endmodule

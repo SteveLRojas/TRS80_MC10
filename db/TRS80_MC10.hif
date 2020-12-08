@@ -1550,39 +1550,6 @@ clkena
 
 # end
 # entity
-RAM
-# storage
-db|TRS80_MC10.(4).cnf
-db|TRS80_MC10.(4).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-ram.v
-cfba72952ba3d318727f8518be72b61
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
-# end
-# entity
 altsyncram
 # storage
 db|TRS80_MC10.(5).cnf
@@ -2186,9 +2153,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-ROM:ROM_inst
-}
 # macro_sequence
 ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
@@ -2597,9 +2561,6 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 keymapper.sv
 5b1f70ce706a757235db3465afdae0f9
 }
-# hierarchies {
-PS2_keyboard:keyboard
-}
 # macro_sequence
 
 # end
@@ -2632,9 +2593,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 5000
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
-}
-# hierarchies {
-PS2_keyboard:keyboard|ps2_host:ps2_host_inst
 }
 # macro_sequence
 
@@ -2669,9 +2627,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-PS2_keyboard:keyboard|ps2_host:ps2_host_inst|ps2_host_rx:ps2_host_rx
-}
 # macro_sequence
 
 # end
@@ -2704,9 +2659,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 5000
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
-}
-# hierarchies {
-PS2_keyboard:keyboard|keymapper:keymapper_inst
 }
 # macro_sequence
 
@@ -2741,77 +2693,8 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-KEY_MATRIX:MATRIX
-}
 # macro_sequence
 
-# end
-# entity
-MC6847_gen2
-# storage
-db|TRS80_MC10.(26).cnf
-db|TRS80_MC10.(26).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-mc6847_gen2.sv
-90f7d38d71879e9bb1e8d234931aa5b
-9
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# macro_sequence
-
-# end
-# entity
-MCM_ROM
-# storage
-db|TRS80_MC10.(27).cnf
-db|TRS80_MC10.(27).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-mcm_rom.v
-f8e093bfcb7b121b43c4dba314f18b
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -3089,85 +2972,6 @@ byteena_a
 address_b
 -1
 2
-}
-# macro_sequence
-
-# end
-# entity
-altsyncram_fbb1
-# storage
-db|TRS80_MC10.(29).cnf
-db|TRS80_MC10.(29).cnf
-# case_insensitive
-# source_file
-db|altsyncram_fbb1.tdf
-ec61e022a6997c06929404caa19ca8
-7
-# used_port {
-q_a7
--1
-3
-q_a6
--1
-3
-q_a5
--1
-3
-q_a4
--1
-3
-q_a3
--1
-3
-q_a2
--1
-3
-q_a1
--1
-3
-q_a0
--1
-3
-clock0
--1
-3
-address_a9
--1
-3
-address_a8
--1
-3
-address_a7
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a10
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-}
-# memory_file {
-mcm_rom_16_16bit_hex.hex
-2288fbdda4ee5f3b97ed71d9b2e54d
 }
 # macro_sequence
 
@@ -5508,45 +5312,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-PS2_keyboard:keyboard|ps2_host:ps2_host_inst|ps2_host_clk_ctrl:ps2_host_clk_ctrl
-}
-# macro_sequence
-
-# end
-# entity
-cpu01
-# storage
-db|TRS80_MC10.(24).cnf
-db|TRS80_MC10.(24).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-6801_core.sv
-575d1f478f244b093688f306a378e9
-9
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-MC6803_gen2:CPU0|cpu01:cpu01_inst
-}
 # macro_sequence
 
 # end
@@ -6004,9 +5769,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-MC6847_gen3:VDG
-}
 # macro_sequence
 
 # end
@@ -6039,9 +5801,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 5000
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
-}
-# hierarchies {
-MC6847_gen3:VDG|CHR_ROM:CHR_inst
 }
 # macro_sequence
 ALTERA_RESERVED_QISALTERA_RESERVED_QIS
@@ -6438,9 +6197,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-MC6803_gen2:CPU0
-}
 # macro_sequence
 
 # end
@@ -6473,9 +6229,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 5000
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
-}
-# hierarchies {
-MC6803_gen2:CPU0|MEM_128_8:iMEM
 }
 # macro_sequence
 
@@ -6510,9 +6263,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-MULTIPLEXED_HEX_DRIVER:multiHEX
-}
 # macro_sequence
 
 # end
@@ -6545,9 +6295,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 5000
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
-}
-# hierarchies {
-MULTIPLEXED_HEX_DRIVER:multiHEX|hexdriver:hex_inst_0
 }
 # macro_sequence
 
@@ -6582,9 +6329,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-MULTIPLEXED_HEX_DRIVER:multiHEX|frame_clk:frame_clk_inst
-}
 # macro_sequence
 
 # end
@@ -6617,9 +6361,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 5000
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
-}
-# hierarchies {
-PLL0:PLL_inst
 }
 # macro_sequence
 
@@ -8187,96 +7928,8 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-PLL0:PLL_inst|altpll:altpll_component|PLL0_altpll:auto_generated
-}
 # macro_sequence
 ALTERA_RESERVED_QISALTERA_RESERVED_QIS
-# end
-# entity
-bus_arbiter_gen2
-# storage
-db|TRS80_MC10.(13).cnf
-db|TRS80_MC10.(13).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-bus_arbiter_gen2.sv
-effa7d7da46938f524c582f16cf45a79
-9
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# macro_sequence
-
-# end
-# entity
-MC10
-# storage
-db|TRS80_MC10.(0).cnf
-db|TRS80_MC10.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-mc10.sv
-58178e3da827ad4afd167d6d235f891
-9
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# include_file {
-sdram_controller.v
-cb88ad1411fd51d2e966b0d42be041ba
-keymapper.sv
-5b1f70ce706a757235db3465afdae0f9
-key_matrix.sv
-1a76bc1377ac50aa137572358c0c4cb
-multiplexed_hex_driver.sv
-5f9d2bd478fd6cdc5fe766892f937a55
-ps2_keyboard.sv
-6fb624f23bac3178bafb7c699bd158f7
-mc6847_gen3.sv
-67b75c3e4d5bc8d98d9f2ed169fcce6
-mc6803_gen2.sv
-bd92a9b12fb98319bf4e943219951ebf
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
 # end
 # entity
 SDRAM_controller
@@ -8308,11 +7961,1447 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
+# macro_sequence
+
+# end
+# entity
+MC10
+# storage
+db|TRS80_MC10.(0).cnf
+db|TRS80_MC10.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mc10.sv
+a08814f1bd1269da611d931f7e91b
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+mc6803_gen2.sv
+bd92a9b12fb98319bf4e943219951ebf
+key_matrix.sv
+1a76bc1377ac50aa137572358c0c4cb
+multiplexed_hex_driver.sv
+5f9d2bd478fd6cdc5fe766892f937a55
+sdram_controller.v
+cb88ad1411fd51d2e966b0d42be041ba
+mc6847_gen3.sv
+67b75c3e4d5bc8d98d9f2ed169fcce6
+ps2_keyboard.sv
+6fb624f23bac3178bafb7c699bd158f7
+keymapper.sv
+5b1f70ce706a757235db3465afdae0f9
+}
+# macro_sequence
+
+# end
+# entity
+MC10
+# storage
+db|TRS80_MC10.(24).cnf
+db|TRS80_MC10.(24).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mc10.sv
+a08814f1bd1269da611d931f7e91b
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+keymapper.sv
+5b1f70ce706a757235db3465afdae0f9
+mc6803_gen2.sv
+bd92a9b12fb98319bf4e943219951ebf
+key_matrix.sv
+1a76bc1377ac50aa137572358c0c4cb
+multiplexed_hex_driver.sv
+5f9d2bd478fd6cdc5fe766892f937a55
+mc6847_gen3.sv
+67b75c3e4d5bc8d98d9f2ed169fcce6
+ps2_keyboard.sv
+6fb624f23bac3178bafb7c699bd158f7
+sdram_controller.v
+cb88ad1411fd51d2e966b0d42be041ba
+}
+# hierarchies {
+|
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+PLL0
+# storage
+db|TRS80_MC10.(47).cnf
+db|TRS80_MC10.(47).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+pll0.v
+b78a46c58be59cdaa84e4c858715e3d1
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+PLL0:PLL_inst
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+PLL0_altpll
+# storage
+db|TRS80_MC10.(50).cnf
+db|TRS80_MC10.(50).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+db|pll0_altpll.v
+60b991ef1c488cf38043d3e1fbad5d0
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+PLL0:PLL_inst|altpll:altpll_component|PLL0_altpll:auto_generated
+}
+# macro_sequence
+ALTERA_RESERVED_QISALTERA_RESERVED_QISTYPES6801TYPES6801
+# end
+# entity
+ROM
+# storage
+db|TRS80_MC10.(51).cnf
+db|TRS80_MC10.(51).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+rom.v
+68e0c0aeae3c8118791912aae82dfb66
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+ROM:ROM_inst
+}
+# macro_sequence
+ALTERA_RESERVED_QISALTERA_RESERVED_QISTYPES6801TYPES6801
+# end
+# entity
+SDRAM_controller
+# storage
+db|TRS80_MC10.(52).cnf
+db|TRS80_MC10.(52).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+sdram_controller.v
+cb88ad1411fd51d2e966b0d42be041ba
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
 # hierarchies {
 SDRAM_controller:SDRAM_inst
 }
 # macro_sequence
-
+TYPES6801TYPES6801
+# end
+# entity
+MULTIPLEXED_HEX_DRIVER
+# storage
+db|TRS80_MC10.(53).cnf
+db|TRS80_MC10.(53).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+multiplexed_hex_driver.sv
+5f9d2bd478fd6cdc5fe766892f937a55
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MULTIPLEXED_HEX_DRIVER:multiHEX
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+hexdriver
+# storage
+db|TRS80_MC10.(54).cnf
+db|TRS80_MC10.(54).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+multiplexed_hex_driver.sv
+5f9d2bd478fd6cdc5fe766892f937a55
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MULTIPLEXED_HEX_DRIVER:multiHEX|hexdriver:hex_inst_0
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+frame_clk
+# storage
+db|TRS80_MC10.(55).cnf
+db|TRS80_MC10.(55).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+multiplexed_hex_driver.sv
+5f9d2bd478fd6cdc5fe766892f937a55
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MULTIPLEXED_HEX_DRIVER:multiHEX|frame_clk:frame_clk_inst
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+PS2_keyboard
+# storage
+db|TRS80_MC10.(56).cnf
+db|TRS80_MC10.(56).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+ps2_keyboard.sv
+6fb624f23bac3178bafb7c699bd158f7
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+keymapper.sv
+5b1f70ce706a757235db3465afdae0f9
+}
+# hierarchies {
+PS2_keyboard:keyboard
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+ps2_host
+# storage
+db|TRS80_MC10.(57).cnf
+db|TRS80_MC10.(57).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+ps2_host.v
+b493ac5cb2d95f9276b2a6df6f6fd26
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+PS2_keyboard:keyboard|ps2_host:ps2_host_inst
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+ps2_host_clk_ctrl
+# storage
+db|TRS80_MC10.(58).cnf
+db|TRS80_MC10.(58).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+ps2_host_clk_ctrl.v
+4e5ee8a9da68958261ce9d5a935870
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+PS2_keyboard:keyboard|ps2_host:ps2_host_inst|ps2_host_clk_ctrl:ps2_host_clk_ctrl
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+ps2_host_rx
+# storage
+db|TRS80_MC10.(59).cnf
+db|TRS80_MC10.(59).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+ps2_host_rx.v
+ee8056e473243167a8232f52e7ddfa8a
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+PS2_keyboard:keyboard|ps2_host:ps2_host_inst|ps2_host_rx:ps2_host_rx
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+keymapper
+# storage
+db|TRS80_MC10.(60).cnf
+db|TRS80_MC10.(60).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+keymapper.sv
+5b1f70ce706a757235db3465afdae0f9
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+PS2_keyboard:keyboard|keymapper:keymapper_inst
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+KEY_MATRIX
+# storage
+db|TRS80_MC10.(61).cnf
+db|TRS80_MC10.(61).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+key_matrix.sv
+1a76bc1377ac50aa137572358c0c4cb
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+KEY_MATRIX:MATRIX
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+MC6803_gen2
+# storage
+db|TRS80_MC10.(62).cnf
+db|TRS80_MC10.(62).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mc6803_gen2.sv
+bd92a9b12fb98319bf4e943219951ebf
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MC6803_gen2:CPU0
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+address_bus_multiplexer
+# storage
+db|TRS80_MC10.(64).cnf
+db|TRS80_MC10.(64).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_address_bus_multiplexer.sv
+72a697645e369df8b01c3a73323aae
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|address_bus_multiplexer:abm
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+MEM_128_8
+# storage
+db|TRS80_MC10.(65).cnf
+db|TRS80_MC10.(65).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mc6803_gen2.sv
+bd92a9b12fb98319bf4e943219951ebf
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MC6803_gen2:CPU0|MEM_128_8:iMEM
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+MC6847_gen3
+# storage
+db|TRS80_MC10.(66).cnf
+db|TRS80_MC10.(66).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mc6847_gen3.sv
+67b75c3e4d5bc8d98d9f2ed169fcce6
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MC6847_gen3:VDG
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+CHR_ROM
+# storage
+db|TRS80_MC10.(67).cnf
+db|TRS80_MC10.(67).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+chr_rom.v
+56539f882944bd1d5eed51c1b89f5a
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MC6847_gen3:VDG|CHR_ROM:CHR_inst
+}
+# macro_sequence
+ALTERA_RESERVED_QISALTERA_RESERVED_QISTYPES6801TYPES6801
+# end
+# entity
+data_bus_output
+# storage
+db|TRS80_MC10.(68).cnf
+db|TRS80_MC10.(68).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_data_bus_output.sv
+7471a89c3b137636c5ce1c25ab2a6ed9
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|data_bus_output:dbo
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+state_sequencer_6801
+# storage
+db|TRS80_MC10.(70).cnf
+db|TRS80_MC10.(70).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_state_sequencer.sv
+45c021a8d4452c8543bee618b4d02a
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+program_counter_6801
+# storage
+db|TRS80_MC10.(71).cnf
+db|TRS80_MC10.(71).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_program_counter.sv
+31304a13959c5dc82e656e2af88bd
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|program_counter_6801:PC01
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+effective_address_6801
+# storage
+db|TRS80_MC10.(72).cnf
+db|TRS80_MC10.(72).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_effective_address.sv
+146b2631fb9de1bf90105bcb4e936ed6
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|effective_address_6801:EA01
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+accumulator_a_6801
+# storage
+db|TRS80_MC10.(73).cnf
+db|TRS80_MC10.(73).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_accumulators.sv
+d0cba9e652ba8bbc174d53f47829f45
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|accumulator_a_6801:acca_inst
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+accumulator_b_6801
+# storage
+db|TRS80_MC10.(74).cnf
+db|TRS80_MC10.(74).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_accumulators.sv
+d0cba9e652ba8bbc174d53f47829f45
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|accumulator_b_6801:accb_inst
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+cpu01
+# storage
+db|TRS80_MC10.(63).cnf
+db|TRS80_MC10.(63).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_core.sv
+5b16a7d55aa56d3ad6aa6b78478f152
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+6801_alu.sv
+e1d3b0d58d7f8a9c30ccdf2cbf7b5d
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+XREG_6801
+# storage
+db|TRS80_MC10.(69).cnf
+db|TRS80_MC10.(69).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_mem_ctrl.sv
+5286b32f73d327f1398d58c1f187e5
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|XREG_6801:XREG_inst
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+SP_6801
+# storage
+db|TRS80_MC10.(75).cnf
+db|TRS80_MC10.(75).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_mem_ctrl.sv
+5286b32f73d327f1398d58c1f187e5
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|SP_6801:SP_inst
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+data_fetch_6801
+# storage
+db|TRS80_MC10.(76).cnf
+db|TRS80_MC10.(76).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_mem_ctrl.sv
+5286b32f73d327f1398d58c1f187e5
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|data_fetch_6801:data_fetch_01
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+CC_6801
+# storage
+db|TRS80_MC10.(77).cnf
+db|TRS80_MC10.(77).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_alu.sv
+e1d3b0d58d7f8a9c30ccdf2cbf7b5d
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|CC_6801:CC01
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+IV_control_6801
+# storage
+db|TRS80_MC10.(78).cnf
+db|TRS80_MC10.(78).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_mem_ctrl.sv
+5286b32f73d327f1398d58c1f187e5
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|IV_control_6801:IV_inst
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+opcode_fetch_6801
+# storage
+db|TRS80_MC10.(79).cnf
+db|TRS80_MC10.(79).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_mem_ctrl.sv
+5286b32f73d327f1398d58c1f187e5
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|opcode_fetch_6801:opcode_fetch_01
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+left_mux_6801
+# storage
+db|TRS80_MC10.(80).cnf
+db|TRS80_MC10.(80).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_multiplexers.sv
+7bd6d0729e6137e5fcd8328be120
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|left_mux_6801:left_mux01
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+right_mux_6801
+# storage
+db|TRS80_MC10.(81).cnf
+db|TRS80_MC10.(81).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_multiplexers.sv
+7bd6d0729e6137e5fcd8328be120
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|right_mux_6801:right_mux01
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+ALU6801
+# storage
+db|TRS80_MC10.(82).cnf
+db|TRS80_MC10.(82).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_alu.sv
+e1d3b0d58d7f8a9c30ccdf2cbf7b5d
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|ALU6801:ALU01
+}
+# macro_sequence
+TYPES6801TYPES6801
+# end
+# entity
+NMI_mux_6801
+# storage
+db|TRS80_MC10.(83).cnf
+db|TRS80_MC10.(83).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+6801_multiplexers.sv
+7bd6d0729e6137e5fcd8328be120
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+6801_types.sv
+1054f0306b2dba12f4951293bfb29e9f
+}
+# hierarchies {
+MC6803_gen2:CPU0|cpu01:cpu01_inst|NMI_mux_6801:NMI_mux_inst
+}
+# macro_sequence
+TYPES6801TYPES6801
 # end
 # complete
 

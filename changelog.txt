@@ -31,3 +31,21 @@ Simplified bus_arbiter_gen2.
 Created SDRAM_controller and SDRAM assignments.
 	A separate project will be created to debug the SDRAM controller.
 Fixed SDRAM controller and replaced previous memory system.
+
+Revision 113
+Cleaned up top level.
+Removed old project files.
+Split 6801_core into multiple files and modules.
+Created the following files:
+	6801_types.sv
+	6801_address_bus_multiplexer.sv
+	6801_data_bus_output.sv
+	6801_ALU.sv
+	6801_state_sequencer.sv
+	6801_program_counter.sv
+	6801_effective_address.sv
+	6801_accumulators.sv
+	6801_multiplexers.sv
+	6801_mem_ctrl.sv
+Note: some files contain more than one module.
+This revision should be functionally identical to the previous one.

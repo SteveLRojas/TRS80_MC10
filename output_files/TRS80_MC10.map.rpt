@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TRS80_MC10
-Wed Jan 08 01:06:00 2003
+Fri Jan 10 09:38:27 2003
 Quartus II Version 10.0 Build 218 06/27/2010 SJ Web Edition
 
 
@@ -14,7 +14,7 @@ Quartus II Version 10.0 Build 218 06/27/2010 SJ Web Edition
   6. Analysis & Synthesis Resource Utilization by Entity
   7. Analysis & Synthesis RAM Summary
   8. Analysis & Synthesis IP Cores Summary
-  9. State Machine - |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state
+  9. State Machine - |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state
  10. State Machine - |MC10|PS2_keyboard:keyboard|state
  11. State Machine - |MC10|SDRAM_controller:SDRAM_inst|state
  12. Registers Removed During Synthesis
@@ -65,13 +65,13 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jan 08 01:05:59 2003    ;
+; Analysis & Synthesis Status        ; Successful - Fri Jan 10 09:38:27 2003    ;
 ; Quartus II Version                 ; 10.0 Build 218 06/27/2010 SJ Web Edition ;
 ; Revision Name                      ; TRS80_MC10                               ;
 ; Top-level Entity Name              ; MC10                                     ;
 ; Family                             ; Cyclone IV E                             ;
-; Total logic elements               ; 1,797                                    ;
-;     Total combinational functions  ; 1,687                                    ;
+; Total logic elements               ; 1,907                                    ;
+;     Total combinational functions  ; 1,797                                    ;
 ;     Dedicated logic registers      ; 512                                      ;
 ; Total registers                    ; 512                                      ;
 ; Total pins                         ; 70                                       ;
@@ -90,7 +90,6 @@ applicable agreement for further details.
 ; Device                                                                     ; EP4CE6E22C8        ;                    ;
 ; Top-level entity name                                                      ; MC10               ; TRS80_MC10         ;
 ; Family name                                                                ; Cyclone IV E       ; Stratix II         ;
-; Maximum processors allowed for parallel compilation                        ; 1                  ;                    ;
 ; Verilog Show LMF Mapping Messages                                          ; Off                ;                    ;
 ; Verilog Version                                                            ; SystemVerilog_2005 ; Verilog_2001       ;
 ; Use LogicLock Constraints during Resource Balancing                        ; Off                ; On                 ;
@@ -167,35 +166,45 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                          ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                      ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+
-; PLL0.v                           ; yes             ; User Wizard-Generated File             ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/PLL0.v                    ;
-; PS2_keyboard.sv                  ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/PS2_keyboard.sv           ;
-; ps2_host_rx.v                    ; yes             ; User Verilog HDL File                  ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/ps2_host_rx.v             ;
-; ps2_host_clk_ctrl.v              ; yes             ; User Verilog HDL File                  ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/ps2_host_clk_ctrl.v       ;
-; ps2_host.v                       ; yes             ; User Verilog HDL File                  ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/ps2_host.v                ;
-; MULTIPLEXED_HEX_DRIVER.sv        ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/MULTIPLEXED_HEX_DRIVER.sv ;
-; MC6803_gen2.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/MC6803_gen2.sv            ;
-; MC10.sv                          ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/MC10.sv                   ;
-; keymapper.sv                     ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/keymapper.sv              ;
-; KEY_MATRIX.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/KEY_MATRIX.sv             ;
-; 6801_core.sv                     ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/6801_core.sv              ;
-; ROM.v                            ; yes             ; User Wizard-Generated File             ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/ROM.v                     ;
-; MC6847_gen3.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/MC6847_gen3.sv            ;
-; CHR_ROM.v                        ; yes             ; User Wizard-Generated File             ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/CHR_ROM.v                 ;
-; SDRAM_controller.v               ; yes             ; User Verilog HDL File                  ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/SDRAM_controller.v        ;
-; altpll.tdf                       ; yes             ; Megafunction                           ; c:/altera/10.0/quartus/libraries/megafunctions/altpll.tdf                         ;
-; db/pll0_altpll.v                 ; yes             ; Auto-Generated Megafunction            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/db/pll0_altpll.v          ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/10.0/quartus/libraries/megafunctions/altsyncram.tdf                     ;
-; db/altsyncram_fq91.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/db/altsyncram_fq91.tdf    ;
-; mc10.hex                         ; yes             ; Auto-Found Memory Initialization File  ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/mc10.hex                  ;
-; db/altsyncram_gba1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/db/altsyncram_gba1.tdf    ;
-; mc10_chr16.hex                   ; yes             ; Auto-Found Memory Initialization File  ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/mc10_chr16.hex            ;
-; db/altsyncram_4tg1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/db/altsyncram_4tg1.tdf    ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                            ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------+
+; PLL0.v                           ; yes             ; User Wizard-Generated File             ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/PLL0.v                          ;
+; PS2_keyboard.sv                  ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/PS2_keyboard.sv                 ;
+; ps2_host_rx.v                    ; yes             ; User Verilog HDL File                  ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/ps2_host_rx.v                   ;
+; ps2_host_clk_ctrl.v              ; yes             ; User Verilog HDL File                  ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/ps2_host_clk_ctrl.v             ;
+; ps2_host.v                       ; yes             ; User Verilog HDL File                  ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/ps2_host.v                      ;
+; MULTIPLEXED_HEX_DRIVER.sv        ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/MULTIPLEXED_HEX_DRIVER.sv       ;
+; MC6803_gen2.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/MC6803_gen2.sv                  ;
+; MC10.sv                          ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/MC10.sv                         ;
+; keymapper.sv                     ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/keymapper.sv                    ;
+; KEY_MATRIX.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/KEY_MATRIX.sv                   ;
+; 6801_core.sv                     ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/6801_core.sv                    ;
+; ROM.v                            ; yes             ; User Wizard-Generated File             ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/ROM.v                           ;
+; MC6847_gen3.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/MC6847_gen3.sv                  ;
+; CHR_ROM.v                        ; yes             ; User Wizard-Generated File             ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/CHR_ROM.v                       ;
+; SDRAM_controller.v               ; yes             ; User Verilog HDL File                  ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/SDRAM_controller.v              ;
+; 6801_types.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/6801_types.sv                   ;
+; 6801_address_bus_multiplexer.sv  ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/6801_address_bus_multiplexer.sv ;
+; 6801_data_bus_output.sv          ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/6801_data_bus_output.sv         ;
+; 6801_ALU.sv                      ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/6801_ALU.sv                     ;
+; 6801_state_sequencer.sv          ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/6801_state_sequencer.sv         ;
+; 6801_program_counter.sv          ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/6801_program_counter.sv         ;
+; 6801_effective_address.sv        ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/6801_effective_address.sv       ;
+; 6801_accumulators.sv             ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/6801_accumulators.sv            ;
+; 6801_multiplexers.sv             ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/6801_multiplexers.sv            ;
+; 6801_mem_ctrl.sv                 ; yes             ; User SystemVerilog HDL File            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/6801_mem_ctrl.sv                ;
+; altpll.tdf                       ; yes             ; Megafunction                           ; c:/altera/10.0/quartus/libraries/megafunctions/altpll.tdf                               ;
+; db/pll0_altpll.v                 ; yes             ; Auto-Generated Megafunction            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/db/pll0_altpll.v                ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/10.0/quartus/libraries/megafunctions/altsyncram.tdf                           ;
+; db/altsyncram_fq91.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/db/altsyncram_fq91.tdf          ;
+; mc10.hex                         ; yes             ; Auto-Found Memory Initialization File  ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/mc10.hex                        ;
+; db/altsyncram_gba1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/db/altsyncram_gba1.tdf          ;
+; mc10_chr16.hex                   ; yes             ; Auto-Found Memory Initialization File  ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/mc10_chr16.hex                  ;
+; db/altsyncram_4tg1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/db/altsyncram_4tg1.tdf          ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -203,16 +212,16 @@ applicable agreement for further details.
 +---------------------------------------------+-----------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                             ;
 +---------------------------------------------+-----------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 1,797                                                                             ;
+; Estimated Total logic elements              ; 1,907                                                                             ;
 ;                                             ;                                                                                   ;
-; Total combinational functions               ; 1687                                                                              ;
+; Total combinational functions               ; 1797                                                                              ;
 ; Logic element usage by number of LUT inputs ;                                                                                   ;
-;     -- 4 input functions                    ; 1099                                                                              ;
-;     -- 3 input functions                    ; 365                                                                               ;
-;     -- <=2 input functions                  ; 223                                                                               ;
+;     -- 4 input functions                    ; 1142                                                                              ;
+;     -- 3 input functions                    ; 428                                                                               ;
+;     -- <=2 input functions                  ; 227                                                                               ;
 ;                                             ;                                                                                   ;
 ; Logic elements by mode                      ;                                                                                   ;
-;     -- normal mode                          ; 1530                                                                              ;
+;     -- normal mode                          ; 1640                                                                              ;
 ;     -- arithmetic mode                      ; 157                                                                               ;
 ;                                             ;                                                                                   ;
 ; Total registers                             ; 512                                                                               ;
@@ -226,43 +235,60 @@ applicable agreement for further details.
 ;                                             ;                                                                                   ;
 ; Maximum fan-out node                        ; PLL0:PLL_inst|altpll:altpll_component|PLL0_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 538                                                                               ;
-; Total fan-out                               ; 7862                                                                              ;
-; Average fan-out                             ; 3.30                                                                              ;
+; Total fan-out                               ; 8278                                                                              ;
+; Average fan-out                             ; 3.32                                                                              ;
 +---------------------------------------------+-----------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                            ;
-+------------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                   ; Library Name ;
-+------------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------+--------------+
-; |MC10                                          ; 1687 (29)         ; 512 (10)     ; 74752       ; 0          ; 0            ; 0       ; 0         ; 70   ; 0            ; |MC10                                                                                                 ;              ;
-;    |KEY_MATRIX:MATRIX|                         ; 14 (14)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|KEY_MATRIX:MATRIX                                                                               ;              ;
-;    |MC6803_gen2:CPU0|                          ; 1201 (190)        ; 261 (87)     ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0                                                                                ;              ;
-;       |MEM_128_8:iMEM|                         ; 0 (0)             ; 0 (0)        ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|MEM_128_8:iMEM                                                                 ;              ;
-;          |altsyncram:REGS_rtl_0|               ; 0 (0)             ; 0 (0)        ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|MEM_128_8:iMEM|altsyncram:REGS_rtl_0                                           ;              ;
-;             |altsyncram_4tg1:auto_generated|   ; 0 (0)             ; 0 (0)        ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|MEM_128_8:iMEM|altsyncram:REGS_rtl_0|altsyncram_4tg1:auto_generated            ;              ;
-;       |cpu01:cpu01_inst|                       ; 1011 (1011)       ; 174 (174)    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst                                                               ;              ;
-;    |MC6847_gen3:VDG|                           ; 114 (114)         ; 87 (87)      ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6847_gen3:VDG                                                                                 ;              ;
-;       |CHR_ROM:CHR_inst|                       ; 0 (0)             ; 0 (0)        ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6847_gen3:VDG|CHR_ROM:CHR_inst                                                                ;              ;
-;          |altsyncram:altsyncram_component|     ; 0 (0)             ; 0 (0)        ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6847_gen3:VDG|CHR_ROM:CHR_inst|altsyncram:altsyncram_component                                ;              ;
-;             |altsyncram_gba1:auto_generated|   ; 0 (0)             ; 0 (0)        ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6847_gen3:VDG|CHR_ROM:CHR_inst|altsyncram:altsyncram_component|altsyncram_gba1:auto_generated ;              ;
-;    |MULTIPLEXED_HEX_DRIVER:multiHEX|           ; 37 (12)           ; 33 (15)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MULTIPLEXED_HEX_DRIVER:multiHEX                                                                 ;              ;
-;       |frame_clk:frame_clk_inst|               ; 18 (18)           ; 18 (18)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MULTIPLEXED_HEX_DRIVER:multiHEX|frame_clk:frame_clk_inst                                        ;              ;
-;       |hexdriver:hex_inst_0|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MULTIPLEXED_HEX_DRIVER:multiHEX|hexdriver:hex_inst_0                                            ;              ;
-;    |PLL0:PLL_inst|                             ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PLL0:PLL_inst                                                                                   ;              ;
-;       |altpll:altpll_component|                ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PLL0:PLL_inst|altpll:altpll_component                                                           ;              ;
-;          |PLL0_altpll:auto_generated|          ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PLL0:PLL_inst|altpll:altpll_component|PLL0_altpll:auto_generated                                ;              ;
-;    |PS2_keyboard:keyboard|                     ; 232 (30)          ; 42 (19)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PS2_keyboard:keyboard                                                                           ;              ;
-;       |keymapper:keymapper_inst|               ; 176 (176)         ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PS2_keyboard:keyboard|keymapper:keymapper_inst                                                  ;              ;
-;       |ps2_host:ps2_host_inst|                 ; 26 (0)            ; 23 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PS2_keyboard:keyboard|ps2_host:ps2_host_inst                                                    ;              ;
-;          |ps2_host_clk_ctrl:ps2_host_clk_ctrl| ; 2 (2)             ; 2 (2)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PS2_keyboard:keyboard|ps2_host:ps2_host_inst|ps2_host_clk_ctrl:ps2_host_clk_ctrl                ;              ;
-;          |ps2_host_rx:ps2_host_rx|             ; 24 (24)           ; 21 (21)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PS2_keyboard:keyboard|ps2_host:ps2_host_inst|ps2_host_rx:ps2_host_rx                            ;              ;
-;    |ROM:ROM_inst|                              ; 0 (0)             ; 0 (0)        ; 65536       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|ROM:ROM_inst                                                                                    ;              ;
-;       |altsyncram:altsyncram_component|        ; 0 (0)             ; 0 (0)        ; 65536       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|ROM:ROM_inst|altsyncram:altsyncram_component                                                    ;              ;
-;          |altsyncram_fq91:auto_generated|      ; 0 (0)             ; 0 (0)        ; 65536       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|ROM:ROM_inst|altsyncram:altsyncram_component|altsyncram_fq91:auto_generated                     ;              ;
-;    |SDRAM_controller:SDRAM_inst|               ; 60 (60)           ; 79 (79)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|SDRAM_controller:SDRAM_inst                                                                     ;              ;
-+------------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                               ;
++---------------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                   ; Library Name ;
++---------------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------+--------------+
+; |MC10                                             ; 1797 (31)         ; 512 (10)     ; 74752       ; 0          ; 0            ; 0       ; 0         ; 70   ; 0            ; |MC10                                                                                                 ;              ;
+;    |KEY_MATRIX:MATRIX|                            ; 14 (14)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|KEY_MATRIX:MATRIX                                                                               ;              ;
+;    |MC6803_gen2:CPU0|                             ; 1306 (188)        ; 261 (87)     ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0                                                                                ;              ;
+;       |MEM_128_8:iMEM|                            ; 0 (0)             ; 0 (0)        ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|MEM_128_8:iMEM                                                                 ;              ;
+;          |altsyncram:REGS_rtl_0|                  ; 0 (0)             ; 0 (0)        ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|MEM_128_8:iMEM|altsyncram:REGS_rtl_0                                           ;              ;
+;             |altsyncram_4tg1:auto_generated|      ; 0 (0)             ; 0 (0)        ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|MEM_128_8:iMEM|altsyncram:REGS_rtl_0|altsyncram_4tg1:auto_generated            ;              ;
+;       |cpu01:cpu01_inst|                          ; 1118 (1)          ; 174 (1)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst                                                               ;              ;
+;          |ALU6801:ALU01|                          ; 316 (316)         ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|ALU6801:ALU01                                                 ;              ;
+;          |CC_6801:CC01|                           ; 29 (29)           ; 8 (8)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|CC_6801:CC01                                                  ;              ;
+;          |IV_control_6801:IV_inst|                ; 3 (3)             ; 3 (3)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|IV_control_6801:IV_inst                                       ;              ;
+;          |NMI_mux_6801:NMI_mux_inst|              ; 3 (3)             ; 1 (1)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|NMI_mux_6801:NMI_mux_inst                                     ;              ;
+;          |SP_6801:SP_inst|                        ; 1 (1)             ; 16 (16)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|SP_6801:SP_inst                                               ;              ;
+;          |XREG_6801:XREG_inst|                    ; 22 (22)           ; 16 (16)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|XREG_6801:XREG_inst                                           ;              ;
+;          |accumulator_a_6801:acca_inst|           ; 15 (15)           ; 8 (8)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|accumulator_a_6801:acca_inst                                  ;              ;
+;          |accumulator_b_6801:accb_inst|           ; 10 (10)           ; 8 (8)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|accumulator_b_6801:accb_inst                                  ;              ;
+;          |address_bus_multiplexer:abm|            ; 35 (35)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|address_bus_multiplexer:abm                                   ;              ;
+;          |data_bus_output:dbo|                    ; 57 (57)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|data_bus_output:dbo                                           ;              ;
+;          |data_fetch_6801:data_fetch_01|          ; 29 (29)           ; 16 (16)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|data_fetch_6801:data_fetch_01                                 ;              ;
+;          |effective_address_6801:EA01|            ; 70 (70)           ; 16 (16)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|effective_address_6801:EA01                                   ;              ;
+;          |left_mux_6801:left_mux01|               ; 52 (52)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|left_mux_6801:left_mux01                                      ;              ;
+;          |opcode_fetch_6801:opcode_fetch_01|      ; 15 (15)           ; 8 (8)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|opcode_fetch_6801:opcode_fetch_01                             ;              ;
+;          |program_counter_6801:PC01|              ; 63 (63)           ; 16 (16)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|program_counter_6801:PC01                                     ;              ;
+;          |right_mux_6801:right_mux01|             ; 16 (16)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|right_mux_6801:right_mux01                                    ;              ;
+;          |state_sequencer_6801:state_sequencer01| ; 381 (381)         ; 57 (57)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01                        ;              ;
+;    |MC6847_gen3:VDG|                              ; 114 (114)         ; 87 (87)      ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6847_gen3:VDG                                                                                 ;              ;
+;       |CHR_ROM:CHR_inst|                          ; 0 (0)             ; 0 (0)        ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6847_gen3:VDG|CHR_ROM:CHR_inst                                                                ;              ;
+;          |altsyncram:altsyncram_component|        ; 0 (0)             ; 0 (0)        ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6847_gen3:VDG|CHR_ROM:CHR_inst|altsyncram:altsyncram_component                                ;              ;
+;             |altsyncram_gba1:auto_generated|      ; 0 (0)             ; 0 (0)        ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MC6847_gen3:VDG|CHR_ROM:CHR_inst|altsyncram:altsyncram_component|altsyncram_gba1:auto_generated ;              ;
+;    |MULTIPLEXED_HEX_DRIVER:multiHEX|              ; 37 (12)           ; 33 (15)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MULTIPLEXED_HEX_DRIVER:multiHEX                                                                 ;              ;
+;       |frame_clk:frame_clk_inst|                  ; 18 (18)           ; 18 (18)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MULTIPLEXED_HEX_DRIVER:multiHEX|frame_clk:frame_clk_inst                                        ;              ;
+;       |hexdriver:hex_inst_0|                      ; 7 (7)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|MULTIPLEXED_HEX_DRIVER:multiHEX|hexdriver:hex_inst_0                                            ;              ;
+;    |PLL0:PLL_inst|                                ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PLL0:PLL_inst                                                                                   ;              ;
+;       |altpll:altpll_component|                   ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PLL0:PLL_inst|altpll:altpll_component                                                           ;              ;
+;          |PLL0_altpll:auto_generated|             ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PLL0:PLL_inst|altpll:altpll_component|PLL0_altpll:auto_generated                                ;              ;
+;    |PS2_keyboard:keyboard|                        ; 235 (30)          ; 42 (19)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PS2_keyboard:keyboard                                                                           ;              ;
+;       |keymapper:keymapper_inst|                  ; 179 (179)         ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PS2_keyboard:keyboard|keymapper:keymapper_inst                                                  ;              ;
+;       |ps2_host:ps2_host_inst|                    ; 26 (0)            ; 23 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PS2_keyboard:keyboard|ps2_host:ps2_host_inst                                                    ;              ;
+;          |ps2_host_clk_ctrl:ps2_host_clk_ctrl|    ; 2 (2)             ; 2 (2)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PS2_keyboard:keyboard|ps2_host:ps2_host_inst|ps2_host_clk_ctrl:ps2_host_clk_ctrl                ;              ;
+;          |ps2_host_rx:ps2_host_rx|                ; 24 (24)           ; 21 (21)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|PS2_keyboard:keyboard|ps2_host:ps2_host_inst|ps2_host_rx:ps2_host_rx                            ;              ;
+;    |ROM:ROM_inst|                                 ; 0 (0)             ; 0 (0)        ; 65536       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|ROM:ROM_inst                                                                                    ;              ;
+;       |altsyncram:altsyncram_component|           ; 0 (0)             ; 0 (0)        ; 65536       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|ROM:ROM_inst|altsyncram:altsyncram_component                                                    ;              ;
+;          |altsyncram_fq91:auto_generated|         ; 0 (0)             ; 0 (0)        ; 65536       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|ROM:ROM_inst|altsyncram:altsyncram_component|altsyncram_fq91:auto_generated                     ;              ;
+;    |SDRAM_controller:SDRAM_inst|                  ; 60 (60)           ; 79 (79)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |MC10|SDRAM_controller:SDRAM_inst                                                                     ;              ;
++---------------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -290,7 +316,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
+; State Machine - |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
 +-------------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+------------------+------------------+------------------+------------------+---------------------+---------------------+---------------------+---------------------+----------------------+----------------------+--------------------+-----------------+----------------------+---------------------+----------------------+----------------------+--------------------+---------------------+---------------------+---------------------+---------------------+--------------------+--------------------+------------------+-----------------+--------------------+------------------+-----------------+-----------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-------------------+-----------------+-------------------+------------------+---------------------+---------------------+--------------------+-------------------------+--------------------+-------------------+---------------------+----------------------+--------------------+-------------------+-------------------+
 ; Name                    ; state.vect_hi_state ; state.vect_lo_state ; state.pshx_hi_state ; state.pshx_lo_state ; state.pulx_hi_state ; state.pulx_lo_state ; state.pshb_state ; state.pulb_state ; state.psha_state ; state.pula_state ; state.rti_pch_state ; state.rti_pcl_state ; state.rti_ixh_state ; state.rti_ixl_state ; state.rti_accb_state ; state.rti_acca_state ; state.rti_cc_state ; state.rti_state ; state.int_mask_state ; state.int_wai_state ; state.int_accb_state ; state.int_acca_state ; state.int_cc_state ; state.int_ixh_state ; state.int_ixl_state ; state.int_pch_state ; state.int_pcl_state ; state.rts_lo_state ; state.rts_hi_state ; state.bsr1_state ; state.bsr_state ; state.branch_state ; state.jsr1_state ; state.jsr_state ; state.jmp_state ; state.mul7_state ; state.mul6_state ; state.mul5_state ; state.mul4_state ; state.mul3_state ; state.mul2_state ; state.mul1_state ; state.mul0_state ; state.muld_state ; state.mulea_state ; state.mul_state ; state.error_state ; state.halt_state ; state.execute_state ; state.write16_state ; state.write8_state ; state.immediate16_state ; state.read16_state ; state.read8_state ; state.indexed_state ; state.extended_state ; state.decode_state ; state.fetch_state ; state.reset_state ;
 +-------------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+------------------+------------------+------------------+------------------+---------------------+---------------------+---------------------+---------------------+----------------------+----------------------+--------------------+-----------------+----------------------+---------------------+----------------------+----------------------+--------------------+---------------------+---------------------+---------------------+---------------------+--------------------+--------------------+------------------+-----------------+--------------------+------------------+-----------------+-----------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-------------------+-----------------+-------------------+------------------+---------------------+---------------------+--------------------+-------------------------+--------------------+-------------------+---------------------+----------------------+--------------------+-------------------+-------------------+
@@ -401,41 +427,41 @@ Encoding Type:  One-Hot
 +------------------------+------------------------+------------------------+------------------------+-------------------+------------------------+------------------------+------------------------+-------------------+--------------------+----------------+------------------------+--------------------+-------------------+-----------------+------------------------+--------------------+------------------+--------------+------------------+--------------+---------------+
 
 
-+----------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                           ;
-+-----------------------------------------------------+----------------------------------------+
-; Register name                                       ; Reason for Removal                     ;
-+-----------------------------------------------------+----------------------------------------+
-; MC6847_gen3:VDG|DA[12..13]                          ; Stuck at GND due to stuck port data_in ;
-; MC6803_gen2:CPU0|PORT_B_IN_s[0,2..3]                ; Stuck at VCC due to stuck port data_in ;
-; MC6803_gen2:CPU0|irq_s                              ; Stuck at GND due to stuck port data_in ;
-; MC6803_gen2:CPU0|halt_s                             ; Stuck at GND due to stuck port data_in ;
-; SDRAM_controller:SDRAM_inst|A_data_hold[8..15]      ; Stuck at GND due to stuck port data_in ;
-; SDRAM_controller:SDRAM_inst|BA_hold[1]              ; Lost fanout                            ;
-; MC6847_gen3:VDG|DD_s[7]                             ; Merged with MC6847_gen3:VDG|SA_s       ;
-; MC6847_gen3:VDG|DD_s[6]                             ; Merged with MC6847_gen3:VDG|INV_s      ;
-; SDRAM_controller:SDRAM_inst|BA_hold[0]              ; Stuck at GND due to stuck port data_in ;
-; SDRAM_controller:SDRAM_inst|SDRAM_A[8..9,11]        ; Stuck at GND due to stuck port data_in ;
-; SDRAM_controller:SDRAM_inst|SDRAM_BA[0..1]          ; Stuck at GND due to stuck port data_in ;
-; MC6803_gen2:CPU0|cpu01:cpu01_inst|state~3           ; Lost fanout                            ;
-; MC6803_gen2:CPU0|cpu01:cpu01_inst|state~4           ; Lost fanout                            ;
-; MC6803_gen2:CPU0|cpu01:cpu01_inst|state~5           ; Lost fanout                            ;
-; MC6803_gen2:CPU0|cpu01:cpu01_inst|state~6           ; Lost fanout                            ;
-; MC6803_gen2:CPU0|cpu01:cpu01_inst|state~7           ; Lost fanout                            ;
-; MC6803_gen2:CPU0|cpu01:cpu01_inst|state~8           ; Lost fanout                            ;
-; PS2_keyboard:keyboard|state~2                       ; Lost fanout                            ;
-; PS2_keyboard:keyboard|state~3                       ; Lost fanout                            ;
-; PS2_keyboard:keyboard|state~4                       ; Lost fanout                            ;
-; PS2_keyboard:keyboard|state~5                       ; Lost fanout                            ;
-; SDRAM_controller:SDRAM_inst|state~2                 ; Lost fanout                            ;
-; SDRAM_controller:SDRAM_inst|state~3                 ; Lost fanout                            ;
-; SDRAM_controller:SDRAM_inst|state~4                 ; Lost fanout                            ;
-; SDRAM_controller:SDRAM_inst|state~5                 ; Lost fanout                            ;
-; SDRAM_controller:SDRAM_inst|state~6                 ; Lost fanout                            ;
-; MC6803_gen2:CPU0|cpu01:cpu01_inst|state.halt_state  ; Stuck at GND due to stuck port data_in ;
-; MC6803_gen2:CPU0|cpu01:cpu01_inst|state.error_state ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 41              ;                                        ;
-+-----------------------------------------------------+----------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                  ;
++--------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                              ; Reason for Removal                     ;
++--------------------------------------------------------------------------------------------+----------------------------------------+
+; MC6847_gen3:VDG|DA[12..13]                                                                 ; Stuck at GND due to stuck port data_in ;
+; MC6803_gen2:CPU0|PORT_B_IN_s[0,2..3]                                                       ; Stuck at VCC due to stuck port data_in ;
+; MC6803_gen2:CPU0|irq_s                                                                     ; Stuck at GND due to stuck port data_in ;
+; MC6803_gen2:CPU0|halt_s                                                                    ; Stuck at GND due to stuck port data_in ;
+; SDRAM_controller:SDRAM_inst|A_data_hold[8..15]                                             ; Stuck at GND due to stuck port data_in ;
+; SDRAM_controller:SDRAM_inst|BA_hold[1]                                                     ; Lost fanout                            ;
+; MC6847_gen3:VDG|DD_s[7]                                                                    ; Merged with MC6847_gen3:VDG|SA_s       ;
+; MC6847_gen3:VDG|DD_s[6]                                                                    ; Merged with MC6847_gen3:VDG|INV_s      ;
+; SDRAM_controller:SDRAM_inst|BA_hold[0]                                                     ; Stuck at GND due to stuck port data_in ;
+; SDRAM_controller:SDRAM_inst|SDRAM_A[8..9,11]                                               ; Stuck at GND due to stuck port data_in ;
+; SDRAM_controller:SDRAM_inst|SDRAM_BA[0..1]                                                 ; Stuck at GND due to stuck port data_in ;
+; MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state~3           ; Lost fanout                            ;
+; MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state~4           ; Lost fanout                            ;
+; MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state~5           ; Lost fanout                            ;
+; MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state~6           ; Lost fanout                            ;
+; MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state~7           ; Lost fanout                            ;
+; MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state~8           ; Lost fanout                            ;
+; PS2_keyboard:keyboard|state~2                                                              ; Lost fanout                            ;
+; PS2_keyboard:keyboard|state~3                                                              ; Lost fanout                            ;
+; PS2_keyboard:keyboard|state~4                                                              ; Lost fanout                            ;
+; PS2_keyboard:keyboard|state~5                                                              ; Lost fanout                            ;
+; SDRAM_controller:SDRAM_inst|state~2                                                        ; Lost fanout                            ;
+; SDRAM_controller:SDRAM_inst|state~3                                                        ; Lost fanout                            ;
+; SDRAM_controller:SDRAM_inst|state~4                                                        ; Lost fanout                            ;
+; SDRAM_controller:SDRAM_inst|state~5                                                        ; Lost fanout                            ;
+; SDRAM_controller:SDRAM_inst|state~6                                                        ; Lost fanout                            ;
+; MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state.halt_state  ; Stuck at GND due to stuck port data_in ;
+; MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state.error_state ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 41                                                     ;                                        ;
++--------------------------------------------------------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -456,11 +482,11 @@ Encoding Type:  One-Hot
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 512   ;
-; Number of registers using Synchronous Clear  ; 69    ;
-; Number of registers using Synchronous Load   ; 15    ;
+; Number of registers using Synchronous Clear  ; 84    ;
+; Number of registers using Synchronous Load   ; 31    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 393   ;
+; Number of registers using Clock Enable       ; 392   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -491,56 +517,59 @@ Encoding Type:  One-Hot
 +---------------------------------------------+----------------------------------------+------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |MC10|MULTIPLEXED_HEX_DRIVER:multiHEX|current_SEG[1]                                  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |MC10|PS2_keyboard:keyboard|ps2_host:ps2_host_inst|ps2_host_rx:ps2_host_rx|rx_data[3] ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |MC10|MC6847_gen3:VDG|pixel_count[3]                                                  ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |MC10|PS2_keyboard:keyboard|ps2_host:ps2_host_inst|ps2_host_rx:ps2_host_rx|frame[7]   ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |MC10|MC6847_gen3:VDG|horiz_scaler[0]                                                 ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|OCRH[1]                                                        ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|OCRL[0]                                                        ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|ETOI                                                           ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |MC10|MC6847_gen3:VDG|R                                                               ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MC10|MC6847_gen3:VDG|col_count[0]                                                    ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |MC10|MC6847_gen3:VDG|line_count[5]                                                   ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|DATA_IN_s[6]                                                   ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|xreg[7]                                       ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|xreg[12]                                      ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|DATA_IN_s[1]                                                   ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|accb[3]                                       ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MC10|PS2_keyboard:keyboard|scan_code[0]                                              ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|acca[1]                                       ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|md[9]                                         ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|md[3]                                         ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |MC10|SDRAM_controller:SDRAM_inst|SDRAM_A[4]                                          ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |MC10|SDRAM_controller:SDRAM_inst|SDRAM_A[1]                                          ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |MC10|MC6847_gen3:VDG|vert_scaler[0]                                                  ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |MC10|MC6847_gen3:VDG|cell_count[0]                                                   ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |MC10|MC6847_gen3:VDG|cell_line[3]                                                    ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; Yes        ; |MC10|MC6847_gen3:VDG|row_count[1]                                                    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state                                         ;
-; 3:1                ; 33 bits   ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state                                         ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|alu_ctrl.alu_lsr16                            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |MC10|MC6847_gen3:VDG|Mux1                                                            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state                                         ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |MC10|SDRAM_controller:SDRAM_inst|state                                               ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|Selector7                                     ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state                                         ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|Selector27                                    ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|Selector33                                    ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|Selector44                                    ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|Selector12                                    ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|Selector126                                   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|Selector138                                   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|Selector53                                    ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|Selector23                                    ;
-; 13:1               ; 6 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|Selector159                                   ;
-; 13:1               ; 8 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|Selector149                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |MC10|MULTIPLEXED_HEX_DRIVER:multiHEX|current_SEG[0]                                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |MC10|PS2_keyboard:keyboard|ps2_host:ps2_host_inst|ps2_host_rx:ps2_host_rx|rx_data[6]     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|accumulator_b_6801:accb_inst|accb[2]              ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |MC10|MC6847_gen3:VDG|pixel_count[2]                                                      ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |MC10|PS2_keyboard:keyboard|ps2_host:ps2_host_inst|ps2_host_rx:ps2_host_rx|frame[6]       ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |MC10|MC6847_gen3:VDG|horiz_scaler[2]                                                     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|OCRH[3]                                                            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|OCRL[6]                                                            ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|ETOI                                                               ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |MC10|MC6847_gen3:VDG|R                                                                   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|data_fetch_6801:data_fetch_01|md[14]              ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 14 LEs               ; 21 LEs                 ; Yes        ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|data_fetch_6801:data_fetch_01|md[1]               ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|accumulator_a_6801:acca_inst|acca[2]              ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MC10|MC6847_gen3:VDG|col_count[1]                                                        ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |MC10|MC6847_gen3:VDG|line_count[2]                                                       ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|DATA_IN_s[6]                                                       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|XREG_6801:XREG_inst|xreg[3]                       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|XREG_6801:XREG_inst|xreg[13]                      ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |MC10|MC6803_gen2:CPU0|DATA_IN_s[0]                                                       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MC10|PS2_keyboard:keyboard|scan_code[0]                                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |MC10|SDRAM_controller:SDRAM_inst|SDRAM_A[4]                                              ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |MC10|SDRAM_controller:SDRAM_inst|SDRAM_A[3]                                              ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |MC10|MC6847_gen3:VDG|vert_scaler[1]                                                      ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |MC10|MC6847_gen3:VDG|cell_count[2]                                                       ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |MC10|MC6847_gen3:VDG|cell_line[0]                                                        ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; Yes        ; |MC10|MC6847_gen3:VDG|row_count[7]                                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state      ;
+; 3:1                ; 33 bits   ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|Mux21      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|Selector24 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |MC10|MC6847_gen3:VDG|Mux2                                                                ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state      ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|Selector16 ;
+; 8:1                ; 13 bits   ; 65 LEs        ; 52 LEs               ; 13 LEs                 ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|address_bus_multiplexer:abm|Selector3             ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 6 LEs                ; 9 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|address_bus_multiplexer:abm|Selector12            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|iv_ctrl    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |MC10|SDRAM_controller:SDRAM_inst|state                                                   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|left_mux_6801:left_mux01|Selector2                ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|left_mux_6801:left_mux01|Selector15               ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|effective_address_6801:EA01|Selector10            ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state      ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|program_counter_6801:PC01|Selector8               ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|program_counter_6801:PC01|Selector9               ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|effective_address_6801:EA01|Selector4             ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|data_bus_output:dbo|Selector2                     ;
+; 36:1               ; 5 bits    ; 120 LEs       ; 40 LEs               ; 80 LEs                 ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|ALU6801:ALU01|Selector12                          ;
+; 38:1               ; 8 bits    ; 200 LEs       ; 64 LEs               ; 136 LEs                ; No         ; |MC10|MC6803_gen2:CPU0|cpu01:cpu01_inst|ALU6801:ALU01|Selector6                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------+
@@ -1248,7 +1277,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 10.0 Build 218 06/27/2010 SJ Web Edition
-    Info: Processing started: Wed Jan 08 01:04:51 2003
+    Info: Processing started: Fri Jan 10 09:36:37 2003
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TRS80_MC10 -c TRS80_MC10
 Info: Found 1 design units, including 1 entities, in source file pll0.v
     Info: Found entity 1: PLL0
@@ -1279,16 +1308,10 @@ Info: Found 1 design units, including 1 entities, in source file key_matrix.sv
     Info: Found entity 1: KEY_MATRIX
 Info: Found 1 design units, including 1 entities, in source file kb_indicators.sv
     Info: Found entity 1: kb_indicators
-Info: Found 1 design units, including 1 entities, in source file bus_arbiter_gen2.sv
-    Info: Found entity 1: bus_arbiter_gen2
 Info: Found 1 design units, including 1 entities, in source file 6801_core.sv
     Info: Found entity 1: cpu01
-Info: Found 1 design units, including 1 entities, in source file ram.v
-    Info: Found entity 1: RAM
 Info: Found 1 design units, including 1 entities, in source file rom.v
     Info: Found entity 1: ROM
-Info: Found 1 design units, including 1 entities, in source file mcm_rom.v
-    Info: Found entity 1: MCM_ROM
 Info: Found 1 design units, including 1 entities, in source file test_ram.v
     Info: Found entity 1: test_ram
 Info: Found 1 design units, including 1 entities, in source file test_rom.v
@@ -1299,6 +1322,33 @@ Info: Found 1 design units, including 1 entities, in source file chr_rom.v
     Info: Found entity 1: CHR_ROM
 Info: Found 1 design units, including 1 entities, in source file sdram_controller.v
     Info: Found entity 1: SDRAM_controller
+Info: Found 0 design units, including 0 entities, in source file 6801_types.sv
+Info: Found 1 design units, including 1 entities, in source file 6801_address_bus_multiplexer.sv
+    Info: Found entity 1: address_bus_multiplexer
+Info: Found 1 design units, including 1 entities, in source file 6801_data_bus_output.sv
+    Info: Found entity 1: data_bus_output
+Info: Found 2 design units, including 2 entities, in source file 6801_alu.sv
+    Info: Found entity 1: ALU6801
+    Info: Found entity 2: CC_6801
+Info: Found 1 design units, including 1 entities, in source file 6801_state_sequencer.sv
+    Info: Found entity 1: state_sequencer_6801
+Info: Found 1 design units, including 1 entities, in source file 6801_program_counter.sv
+    Info: Found entity 1: program_counter_6801
+Info: Found 1 design units, including 1 entities, in source file 6801_effective_address.sv
+    Info: Found entity 1: effective_address_6801
+Info: Found 2 design units, including 2 entities, in source file 6801_accumulators.sv
+    Info: Found entity 1: accumulator_a_6801
+    Info: Found entity 2: accumulator_b_6801
+Info: Found 3 design units, including 3 entities, in source file 6801_multiplexers.sv
+    Info: Found entity 1: left_mux_6801
+    Info: Found entity 2: right_mux_6801
+    Info: Found entity 3: NMI_mux_6801
+Info: Found 5 design units, including 5 entities, in source file 6801_mem_ctrl.sv
+    Info: Found entity 1: opcode_fetch_6801
+    Info: Found entity 2: IV_control_6801
+    Info: Found entity 3: data_fetch_6801
+    Info: Found entity 4: SP_6801
+    Info: Found entity 5: XREG_6801
 Info: Elaborating entity "MC10" for the top level hierarchy
 Info: Elaborating entity "PLL0" for hierarchy "PLL0:PLL_inst"
 Info: Elaborating entity "altpll" for hierarchy "PLL0:PLL_inst|altpll:altpll_component"
@@ -1408,29 +1458,25 @@ Info: Elaborating entity "keymapper" for hierarchy "PS2_keyboard:keyboard|keymap
 Info: Elaborating entity "KEY_MATRIX" for hierarchy "KEY_MATRIX:MATRIX"
 Info: Elaborating entity "MC6803_gen2" for hierarchy "MC6803_gen2:CPU0"
 Info: Elaborating entity "cpu01" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst"
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(218): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(232): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(270): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(279): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(319): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(344): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(367): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(412): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(450): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(474): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(507): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(526): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(559): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(584): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(633): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(671): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(709): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(736): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(757): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(771): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(785): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(874): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at 6801_core.sv(892): all case item expressions in this case statement are onehot
+Info: Elaborating entity "address_bus_multiplexer" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|address_bus_multiplexer:abm"
+Info: Elaborating entity "data_bus_output" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|data_bus_output:dbo"
+Info: Elaborating entity "program_counter_6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|program_counter_6801:PC01"
+Info: Elaborating entity "effective_address_6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|effective_address_6801:EA01"
+Info (10264): Verilog HDL Case Statement information at 6801_effective_address.sv(13): all case item expressions in this case statement are onehot
+Info: Elaborating entity "accumulator_a_6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|accumulator_a_6801:acca_inst"
+Info: Elaborating entity "accumulator_b_6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|accumulator_b_6801:accb_inst"
+Info: Elaborating entity "XREG_6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|XREG_6801:XREG_inst"
+Info: Elaborating entity "SP_6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|SP_6801:SP_inst"
+Info: Elaborating entity "data_fetch_6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|data_fetch_6801:data_fetch_01"
+Info: Elaborating entity "CC_6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|CC_6801:CC01"
+Info: Elaborating entity "IV_control_6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|IV_control_6801:IV_inst"
+Info: Elaborating entity "opcode_fetch_6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|opcode_fetch_6801:opcode_fetch_01"
+Info: Elaborating entity "left_mux_6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|left_mux_6801:left_mux01"
+Info: Elaborating entity "right_mux_6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|right_mux_6801:right_mux01"
+Info: Elaborating entity "ALU6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|ALU6801:ALU01"
+Info: Elaborating entity "NMI_mux_6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|NMI_mux_6801:NMI_mux_inst"
+Info: Elaborating entity "state_sequencer_6801" for hierarchy "MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01"
+Info (10264): Verilog HDL Case Statement information at 6801_state_sequencer.sv(38): all case item expressions in this case statement are onehot
 Info: Elaborating entity "MEM_128_8" for hierarchy "MC6803_gen2:CPU0|MEM_128_8:iMEM"
 Info: Elaborating entity "MC6847_gen3" for hierarchy "MC6847_gen3:VDG"
 Info: Elaborating entity "CHR_ROM" for hierarchy "MC6847_gen3:VDG|CHR_ROM:CHR_inst"
@@ -1505,12 +1551,12 @@ Warning: Output pins are stuck at VCC or GND
 Info: Timing-Driven Synthesis is running
 Info: 16 registers lost all their fanouts during netlist optimizations. The first 16 are displayed below.
     Info: Register "SDRAM_controller:SDRAM_inst|BA_hold[1]" lost all its fanouts during netlist optimizations.
-    Info: Register "MC6803_gen2:CPU0|cpu01:cpu01_inst|state~3" lost all its fanouts during netlist optimizations.
-    Info: Register "MC6803_gen2:CPU0|cpu01:cpu01_inst|state~4" lost all its fanouts during netlist optimizations.
-    Info: Register "MC6803_gen2:CPU0|cpu01:cpu01_inst|state~5" lost all its fanouts during netlist optimizations.
-    Info: Register "MC6803_gen2:CPU0|cpu01:cpu01_inst|state~6" lost all its fanouts during netlist optimizations.
-    Info: Register "MC6803_gen2:CPU0|cpu01:cpu01_inst|state~7" lost all its fanouts during netlist optimizations.
-    Info: Register "MC6803_gen2:CPU0|cpu01:cpu01_inst|state~8" lost all its fanouts during netlist optimizations.
+    Info: Register "MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state~3" lost all its fanouts during netlist optimizations.
+    Info: Register "MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state~4" lost all its fanouts during netlist optimizations.
+    Info: Register "MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state~5" lost all its fanouts during netlist optimizations.
+    Info: Register "MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state~6" lost all its fanouts during netlist optimizations.
+    Info: Register "MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state~7" lost all its fanouts during netlist optimizations.
+    Info: Register "MC6803_gen2:CPU0|cpu01:cpu01_inst|state_sequencer_6801:state_sequencer01|state~8" lost all its fanouts during netlist optimizations.
     Info: Register "PS2_keyboard:keyboard|state~2" lost all its fanouts during netlist optimizations.
     Info: Register "PS2_keyboard:keyboard|state~3" lost all its fanouts during netlist optimizations.
     Info: Register "PS2_keyboard:keyboard|state~4" lost all its fanouts during netlist optimizations.
@@ -1520,21 +1566,43 @@ Info: 16 registers lost all their fanouts during netlist optimizations. The firs
     Info: Register "SDRAM_controller:SDRAM_inst|state~4" lost all its fanouts during netlist optimizations.
     Info: Register "SDRAM_controller:SDRAM_inst|state~5" lost all its fanouts during netlist optimizations.
     Info: Register "SDRAM_controller:SDRAM_inst|state~6" lost all its fanouts during netlist optimizations.
+Info: Starting physical synthesis optimizations for speed
+Info: Timing-driven compilation is using the TimeQuest Timing Analyzer
+Info: Reading SDC File: 'TRS80_MC10.sdc'
+Info: Deriving PLL Clocks
+    Info: create_generated_clock -source {PLL_inst|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 56 -duty_cycle 50.00 -name {PLL_inst|altpll_component|auto_generated|pll1|clk[0]} {PLL_inst|altpll_component|auto_generated|pll1|clk[0]}
+    Info: create_generated_clock -source {PLL_inst|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 2 -duty_cycle 50.00 -name {PLL_inst|altpll_component|auto_generated|pll1|clk[1]} {PLL_inst|altpll_component|auto_generated|pll1|clk[1]}
+    Info: create_generated_clock -source {PLL_inst|altpll_component|auto_generated|pll1|inclk[0]} -duty_cycle 50.00 -name {PLL_inst|altpll_component|auto_generated|pll1|clk[2]} {PLL_inst|altpll_component|auto_generated|pll1|clk[2]}
+    Info: create_generated_clock -source {PLL_inst|altpll_component|auto_generated|pll1|inclk[0]} -duty_cycle 50.00 -name {PLL_inst|altpll_component|auto_generated|pll1|clk[3]} {PLL_inst|altpll_component|auto_generated|pll1|clk[3]}
+Info: Clock uncertainty calculation is delayed until the next update_timing_netlist call
+Info: The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info: Detected timing requirements -- optimizing circuit to achieve only the specified requirements
+Info: Found 5 clocks
+    Info:   Period   Clock Name
+    Info: ======== ============
+    Info:   20.000          Clk
+    Info: 1120.000 PLL_inst|altpll_component|auto_generated|pll1|clk[0]
+    Info:   40.000 PLL_inst|altpll_component|auto_generated|pll1|clk[1]
+    Info:   20.000 PLL_inst|altpll_component|auto_generated|pll1|clk[2]
+    Info:   20.000 PLL_inst|altpll_component|auto_generated|pll1|clk[3]
+Info: Starting physical synthesis algorithm combinational resynthesis using boolean division
+Info: Physical synthesis algorithm combinational resynthesis using boolean division complete: estimated slack improvement of 0 ps
+Info: Physical synthesis optimizations for speed complete: elapsed CPU time is 00:00:03
 Info: Generated suppressed messages file C:/Documents and Settings/Admin/My Documents/TRS80_MC10/output_files/TRS80_MC10.map.smsg
 Info: Generating hard_block partition "hard_block:auto_generated_inst"
     Info: Adding node "PLL0:PLL_inst|altpll:altpll_component|PLL0_altpll:auto_generated|pll1"
-Info: Implemented 1945 device resources after synthesis - the final resource count might be different
+Info: Implemented 2055 device resources after synthesis - the final resource count might be different
     Info: Implemented 9 input pins
     Info: Implemented 45 output pins
     Info: Implemented 16 bidirectional pins
-    Info: Implemented 1850 logic cells
+    Info: Implemented 1960 logic cells
     Info: Implemented 24 RAM segments
     Info: Implemented 1 PLLs
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 223 megabytes
-    Info: Processing ended: Wed Jan 08 01:06:00 2003
-    Info: Elapsed time: 00:01:09
-    Info: Total CPU time (on all processors): 00:01:05
+    Info: Peak virtual memory: 246 megabytes
+    Info: Processing ended: Fri Jan 10 09:38:28 2003
+    Info: Elapsed time: 00:01:51
+    Info: Total CPU time (on all processors): 00:01:46
 
 
 +------------------------------------------+

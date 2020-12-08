@@ -1,0 +1,50 @@
+module left_mux_6801(
+			input left_type left_ctrl, 
+			input logic[7:0] acca, accb, 
+			input logic[15:0] xreg, sp, md
+			output logic[15:0] left);
+always_comb
+begin
+  case (left_ctrl)
+	 acca_left:
+	 begin
+	   left[15:8] = 8'b00000000;
+		left[7:0]  = acca;
+	end
+	 accb_left:
+	 begin
+	   left[15:8] = 8'b00000000;
+		left[7:0]  = accb;
+	end
+	 accd_left:
+	 begin
+	   left[15:8] = acca;
+		left[7:0]  = accb;
+	end
+	 ix_left:
+	   left = xreg;
+	 sp_left:
+	   left = sp;
+	 default:
+//	 md_left:
+	   left = md;
+    endcase
+end
+endmodule
+
+module right_mux_6801();
+always_comb
+begin
+  case (right_ctrl)
+	 zero_right:
+	   right = 16'b0000000000000000;
+	 plus_one_right:
+	   right = 16'b0000000000000001;
+	 accb_right:
+	   right = {8'b00000000, accb};
+	 default:
+//	 md_right:
+	   right = md;
+    endcase
+end
+endmodule

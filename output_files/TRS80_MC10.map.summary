@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Wed Jan 08 01:05:59 2003
+Analysis & Synthesis Status : Successful - Fri Jan 10 09:38:27 2003
 Quartus II Version : 10.0 Build 218 06/27/2010 SJ Web Edition
 Revision Name : TRS80_MC10
 Top-level Entity Name : MC10
 Family : Cyclone IV E
-Total logic elements : 1,797
-    Total combinational functions : 1,687
+Total logic elements : 1,907
+    Total combinational functions : 1,797
     Dedicated logic registers : 512
 Total registers : 512
 Total pins : 70

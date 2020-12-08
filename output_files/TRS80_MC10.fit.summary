@@ -1,12 +1,12 @@
-Fitter Status : Successful - Wed Jan 08 01:07:23 2003
+Fitter Status : Successful - Fri Jan 10 09:40:02 2003
 Quartus II Version : 10.0 Build 218 06/27/2010 SJ Web Edition
 Revision Name : TRS80_MC10
 Top-level Entity Name : MC10
 Family : Cyclone IV E
 Device : EP4CE6E22C8
 Timing Models : Final
-Total logic elements : 1,721 / 6,272 ( 27 % )
-    Total combinational functions : 1,687 / 6,272 ( 27 % )
+Total logic elements : 1,839 / 6,272 ( 29 % )
+    Total combinational functions : 1,797 / 6,272 ( 29 % )
     Dedicated logic registers : 504 / 6,272 ( 8 % )
 Total registers : 504
 Total pins : 70 / 92 ( 76 % )

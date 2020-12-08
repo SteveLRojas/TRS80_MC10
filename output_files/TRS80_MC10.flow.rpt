@@ -1,5 +1,5 @@
 Flow report for TRS80_MC10
-Wed Jan 08 01:08:22 2003
+Fri Jan 10 09:41:00 2003
 Quartus II Version 10.0 Build 218 06/27/2010 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +------------------------------------+------------------------------------------+
-; Flow Status                        ; Successful - Wed Jan 08 01:08:22 2003    ;
+; Flow Status                        ; Successful - Fri Jan 10 09:41:00 2003    ;
 ; Quartus II Version                 ; 10.0 Build 218 06/27/2010 SJ Web Edition ;
 ; Revision Name                      ; TRS80_MC10                               ;
 ; Top-level Entity Name              ; MC10                                     ;
@@ -46,8 +46,8 @@ applicable agreement for further details.
 ; Device                             ; EP4CE6E22C8                              ;
 ; Timing Models                      ; Final                                    ;
 ; Met timing requirements            ; N/A                                      ;
-; Total logic elements               ; 1,721 / 6,272 ( 27 % )                   ;
-;     Total combinational functions  ; 1,687 / 6,272 ( 27 % )                   ;
+; Total logic elements               ; 1,839 / 6,272 ( 29 % )                   ;
+;     Total combinational functions  ; 1,797 / 6,272 ( 29 % )                   ;
 ;     Dedicated logic registers      ; 504 / 6,272 ( 8 % )                      ;
 ; Total registers                    ; 504                                      ;
 ; Total pins                         ; 70 / 92 ( 76 % )                         ;
@@ -63,72 +63,67 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/08/2003 01:04:52 ;
+; Start date & time ; 01/10/2003 09:36:38 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; TRS80_MC10          ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                               ;
-+----------------------------------------+------------------------------------------------------------------------+---------------+-------------+----------------+
-; Assignment Name                        ; Value                                                                  ; Default Value ; Entity Name ; Section Id     ;
-+----------------------------------------+------------------------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                  ; 0.104200949201652                                                      ; --            ; --          ; --             ;
-; EDA_DESIGN_INSTANCE_NAME               ; NA                                                                     ; --            ; --          ; Testbench      ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH   ; Testbench                                                              ; --            ; --          ; eda_simulation ;
-; EDA_OUTPUT_DATA_FORMAT                 ; Systemverilog Hdl                                                      ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                    ; ModelSim-Altera (SystemVerilog)                                        ; <None>        ; --          ; --             ;
-; EDA_TEST_BENCH_ENABLE_STATUS           ; TEST_BENCH_MODE                                                        ; --            ; --          ; eda_simulation ;
-; EDA_TEST_BENCH_FILE                    ; Testbench.sv                                                           ; --            ; --          ; Testbench      ;
-; EDA_TEST_BENCH_FILE                    ; test_ram.v                                                             ; --            ; --          ; Testbench      ;
-; EDA_TEST_BENCH_FILE                    ; test_rom.v                                                             ; --            ; --          ; Testbench      ;
-; EDA_TEST_BENCH_MODULE_NAME             ; Testbench                                                              ; --            ; --          ; Testbench      ;
-; EDA_TEST_BENCH_NAME                    ; Testbench                                                              ; --            ; --          ; eda_simulation ;
-; EDA_TEST_BENCH_RUN_SIM_FOR             ; 1000 ns                                                                ; --            ; --          ; Testbench      ;
-; EDA_TIME_SCALE                         ; 1 ps                                                                   ; --            ; --          ; eda_simulation ;
-; IP_TOOL_NAME                           ; ALTPLL                                                                 ; --            ; --          ; --             ;
-; IP_TOOL_NAME                           ; RAM: 1-PORT                                                            ; --            ; --          ; --             ;
-; IP_TOOL_NAME                           ; ROM: 1-PORT                                                            ; --            ; --          ; --             ;
-; IP_TOOL_NAME                           ; ROM: 1-PORT                                                            ; --            ; --          ; --             ;
-; IP_TOOL_NAME                           ; RAM: 1-PORT                                                            ; --            ; --          ; --             ;
-; IP_TOOL_NAME                           ; ROM: 1-PORT                                                            ; --            ; --          ; --             ;
-; IP_TOOL_NAME                           ; ROM: 1-PORT                                                            ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                        ; 10.0                                                                   ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                        ; 13.1                                                                   ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                        ; 13.1                                                                   ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                        ; 13.1                                                                   ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                        ; 13.1                                                                   ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                        ; 13.1                                                                   ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                        ; 10.0                                                                   ; --            ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP                 ; 85                                                                     ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP                 ; 0                                                                      ; --            ; --          ; --             ;
-; MISC_FILE                              ; PLL0_bb.v                                                              ; --            ; --          ; --             ;
-; MISC_FILE                              ; PLL0.ppf                                                               ; --            ; --          ; --             ;
-; MISC_FILE                              ; RAM_bb.v                                                               ; --            ; --          ; --             ;
-; MISC_FILE                              ; ROM_bb.v                                                               ; --            ; --          ; --             ;
-; MISC_FILE                              ; MCM_ROM_bb.v                                                           ; --            ; --          ; --             ;
-; MISC_FILE                              ; test_ram_bb.v                                                          ; --            ; --          ; --             ;
-; MISC_FILE                              ; test_rom_bb.v                                                          ; --            ; --          ; --             ;
-; MISC_FILE                              ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/TRS80_MC10.dpf ; --            ; --          ; --             ;
-; MISC_FILE                              ; CHR_ROM_bb.v                                                           ; --            ; --          ; --             ;
-; NUM_PARALLEL_PROCESSORS                ; 1                                                                      ; --            ; --          ; --             ;
-; OUTPUT_IO_TIMING_ENDPOINT              ; Near End                                                               ; --            ; --          ; --             ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS         ; Half Signal Swing                                                      ; --            ; --          ; --             ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS         ; Half Signal Swing                                                      ; --            ; --          ; --             ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS        ; Half Vccio                                                             ; --            ; --          ; --             ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS        ; Half Vccio                                                             ; --            ; --          ; --             ;
-; PARTITION_COLOR                        ; 16764057                                                               ; --            ; MC10        ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL    ; PLACEMENT_AND_ROUTING                                                  ; --            ; MC10        ; Top            ;
-; PARTITION_NETLIST_TYPE                 ; SOURCE                                                                 ; --            ; MC10        ; Top            ;
-; POWER_BOARD_THERMAL_MODEL              ; None (CONSERVATIVE)                                                    ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION          ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                  ; --            ; --          ; --             ;
-; PROJECT_OUTPUT_DIRECTORY               ; output_files                                                           ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                       ; MC10                                                                   ; TRS80_MC10    ; --          ; --             ;
-; USE_LOGICLOCK_CONSTRAINTS_IN_BALANCING ; Off                                                                    ; On            ; --          ; --             ;
-; VERILOG_INPUT_VERSION                  ; SystemVerilog_2005                                                     ; Verilog_2001  ; --          ; --             ;
-; VERILOG_SHOW_LMF_MAPPING_MESSAGES      ; Off                                                                    ; --            ; --          ; --             ;
-+----------------------------------------+------------------------------------------------------------------------+---------------+-------------+----------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                ;
++-----------------------------------------+------------------------------------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                         ; Value                                                                  ; Default Value ; Entity Name ; Section Id     ;
++-----------------------------------------+------------------------------------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID                   ; 0.104221299801932                                                      ; --            ; --          ; --             ;
+; EDA_DESIGN_INSTANCE_NAME                ; NA                                                                     ; --            ; --          ; Testbench      ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH    ; Testbench                                                              ; --            ; --          ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT                  ; Systemverilog Hdl                                                      ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                     ; ModelSim-Altera (SystemVerilog)                                        ; <None>        ; --          ; --             ;
+; EDA_TEST_BENCH_ENABLE_STATUS            ; TEST_BENCH_MODE                                                        ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_FILE                     ; Testbench.sv                                                           ; --            ; --          ; Testbench      ;
+; EDA_TEST_BENCH_FILE                     ; test_ram.v                                                             ; --            ; --          ; Testbench      ;
+; EDA_TEST_BENCH_FILE                     ; test_rom.v                                                             ; --            ; --          ; Testbench      ;
+; EDA_TEST_BENCH_MODULE_NAME              ; Testbench                                                              ; --            ; --          ; Testbench      ;
+; EDA_TEST_BENCH_NAME                     ; Testbench                                                              ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_RUN_SIM_FOR              ; 1000 ns                                                                ; --            ; --          ; Testbench      ;
+; EDA_TIME_SCALE                          ; 1 ps                                                                   ; --            ; --          ; eda_simulation ;
+; IP_TOOL_NAME                            ; ALTPLL                                                                 ; --            ; --          ; --             ;
+; IP_TOOL_NAME                            ; ROM: 1-PORT                                                            ; --            ; --          ; --             ;
+; IP_TOOL_NAME                            ; RAM: 1-PORT                                                            ; --            ; --          ; --             ;
+; IP_TOOL_NAME                            ; ROM: 1-PORT                                                            ; --            ; --          ; --             ;
+; IP_TOOL_NAME                            ; ROM: 1-PORT                                                            ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                         ; 10.0                                                                   ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                         ; 13.1                                                                   ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                         ; 13.1                                                                   ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                         ; 13.1                                                                   ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                         ; 10.0                                                                   ; --            ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP                  ; 85                                                                     ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP                  ; 0                                                                      ; --            ; --          ; --             ;
+; MISC_FILE                               ; PLL0_bb.v                                                              ; --            ; --          ; --             ;
+; MISC_FILE                               ; PLL0.ppf                                                               ; --            ; --          ; --             ;
+; MISC_FILE                               ; ROM_bb.v                                                               ; --            ; --          ; --             ;
+; MISC_FILE                               ; test_ram_bb.v                                                          ; --            ; --          ; --             ;
+; MISC_FILE                               ; test_rom_bb.v                                                          ; --            ; --          ; --             ;
+; MISC_FILE                               ; C:/Documents and Settings/Admin/My Documents/TRS80_MC10/TRS80_MC10.dpf ; --            ; --          ; --             ;
+; MISC_FILE                               ; CHR_ROM_bb.v                                                           ; --            ; --          ; --             ;
+; OUTPUT_IO_TIMING_ENDPOINT               ; Near End                                                               ; --            ; --          ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS          ; Half Signal Swing                                                      ; --            ; --          ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS          ; Half Signal Swing                                                      ; --            ; --          ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS         ; Half Vccio                                                             ; --            ; --          ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS         ; Half Vccio                                                             ; --            ; --          ; --             ;
+; PARTITION_COLOR                         ; 16764057                                                               ; --            ; MC10        ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL     ; PLACEMENT_AND_ROUTING                                                  ; --            ; MC10        ; Top            ;
+; PARTITION_NETLIST_TYPE                  ; SOURCE                                                                 ; --            ; MC10        ; Top            ;
+; PHYSICAL_SYNTHESIS_COMBO_LOGIC          ; On                                                                     ; Off           ; --          ; --             ;
+; PHYSICAL_SYNTHESIS_COMBO_LOGIC_FOR_AREA ; On                                                                     ; Off           ; --          ; --             ;
+; POWER_BOARD_THERMAL_MODEL               ; None (CONSERVATIVE)                                                    ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION           ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                  ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY                ; output_files                                                           ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                        ; MC10                                                                   ; TRS80_MC10    ; --          ; --             ;
+; USE_LOGICLOCK_CONSTRAINTS_IN_BALANCING  ; Off                                                                    ; On            ; --          ; --             ;
+; VERILOG_INPUT_VERSION                   ; SystemVerilog_2005                                                     ; Verilog_2001  ; --          ; --             ;
+; VERILOG_SHOW_LMF_MAPPING_MESSAGES       ; Off                                                                    ; --            ; --          ; --             ;
++-----------------------------------------+------------------------------------------------------------------------+---------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -136,12 +131,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:07     ; 1.0                     ; 223 MB              ; 00:01:04                           ;
-; Fitter                    ; 00:01:21     ; 1.0                     ; 279 MB              ; 00:01:18                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 203 MB              ; 00:00:05                           ;
-; TimeQuest Timing Analyzer ; 00:00:26     ; 1.0                     ; 245 MB              ; 00:00:24                           ;
-; EDA Netlist Writer        ; 00:00:17     ; 1.0                     ; 193 MB              ; 00:00:15                           ;
-; Total                     ; 00:03:16     ; --                      ; --                  ; 00:03:06                           ;
+; Analysis & Synthesis      ; 00:01:49     ; 1.0                     ; 246 MB              ; 00:01:44                           ;
+; Fitter                    ; 00:01:33     ; 1.0                     ; 281 MB              ; 00:01:29                           ;
+; Assembler                 ; 00:00:08     ; 1.0                     ; 203 MB              ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:31     ; 1.0                     ; 246 MB              ; 00:00:25                           ;
+; EDA Netlist Writer        ; 00:00:18     ; 1.0                     ; 194 MB              ; 00:00:17                           ;
+; Total                     ; 00:04:19     ; --                      ; --                  ; 00:04:00                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

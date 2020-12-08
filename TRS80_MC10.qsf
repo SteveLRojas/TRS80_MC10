@@ -45,7 +45,6 @@ set_global_assignment -name LAST_QUARTUS_VERSION 10.0
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (SystemVerilog)"
 #set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
-set_global_assignment -name NUM_PARALLEL_PROCESSORS 1
 set_location_assignment PIN_23 -to Clk
 set_location_assignment PIN_25 -to RST
 set_location_assignment PIN_110 -to beep
@@ -102,11 +101,8 @@ set_global_assignment -name SYSTEMVERILOG_FILE MC10.sv
 set_global_assignment -name SYSTEMVERILOG_FILE keymapper.sv
 set_global_assignment -name SYSTEMVERILOG_FILE KEY_MATRIX.sv
 set_global_assignment -name SYSTEMVERILOG_FILE kb_indicators.sv
-set_global_assignment -name SYSTEMVERILOG_FILE bus_arbiter_gen2.sv
 set_global_assignment -name SYSTEMVERILOG_FILE 6801_core.sv
-set_global_assignment -name QIP_FILE RAM.qip
 set_global_assignment -name QIP_FILE ROM.qip
-set_global_assignment -name QIP_FILE MCM_ROM.qip
 set_global_assignment -name QIP_FILE test_ram.qip
 set_global_assignment -name QIP_FILE test_rom.qip
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
@@ -265,4 +261,16 @@ set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to SDRAM_BA*
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SDRAM_CLK
 set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
 set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name SYSTEMVERILOG_FILE 6801_types.sv
+set_global_assignment -name SYSTEMVERILOG_FILE 6801_address_bus_multiplexer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE 6801_data_bus_output.sv
+set_global_assignment -name SYSTEMVERILOG_FILE 6801_ALU.sv
+set_global_assignment -name SYSTEMVERILOG_FILE 6801_state_sequencer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE 6801_program_counter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE 6801_effective_address.sv
+set_global_assignment -name SYSTEMVERILOG_FILE 6801_accumulators.sv
+set_global_assignment -name SYSTEMVERILOG_FILE 6801_multiplexers.sv
+set_global_assignment -name SYSTEMVERILOG_FILE 6801_mem_ctrl.sv
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC_FOR_AREA ON
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
